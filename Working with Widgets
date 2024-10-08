@@ -92,9 +92,10 @@ import ipywidgets as widgets
 from IPython.display import clear_output
 
 layout = widgets.Layout(width='300px', height='50px', border='dashed 2px')
-button1 = widgets.Button(description='Python', layout=layout)
-button2 = widgets.Button(description='Go', layout=layout)
+button1 = widgets.Button(description='Python', layout=layout, button_style='success')
+button2 = widgets.Button(description='Go', layout=layout, button_style='info')
 button3 = widgets.Button(description='Rust', layout=layout)
+button3.style.button_color = 'purple'
 output= widgets.Output()
 
 print("Pick your favorite language:")
