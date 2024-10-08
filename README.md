@@ -1,11 +1,11 @@
 # Jupyter
 
-Code snippets 
 
-## Interactive Visualizations with Ipywidgets
+
+### Interactive Visualizations with Ipywidgets
 This repository contains a series of interactive visualizations using ipywidgets in Python (or notebooks) that I have worked on during my Data Science and Jupyter journey.
 
-### The examples demonstrate how to create interactive elements within Jupyter Notebooks:
+#### The examples demonstrate how to create interactive elements within Jupyter Notebooks:
 
 Sine Wave Visualization: Interactive plots of sine waves with adjustable frequency sliders.
 Language Selector: A dropdown menu to select and display programming language descriptors.
