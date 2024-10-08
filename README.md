@@ -13,3 +13,5 @@ Value Display: A simple interactive widget to return and display a value.
 Integer Slider: An integer slider for dynamic value selection.
 Button Clicks: Interactive buttons to select and display a favorite programming language, with clear output functionality.
 Styled Buttons: Enhanced button UI with custom styles and layout
+
+[Launch the widgets notebook in Binder](https://mybinder.org/v2/gh/wgeesey/Jupyter.git/main?labpath=widgets.ipynb)
