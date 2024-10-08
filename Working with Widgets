@@ -85,3 +85,26 @@ def event_handler(button):
 button1.on_click(event_handler)
 button2.on_click(event_handler)
 button3.on_click(event_handler)
+
+---------------------------------------------------------------------
+
+import ipywidgets as widgets
+from IPython.display import clear_output
+
+layout = widgets.Layout(width='300px', height='50px', border='dashed 2px')
+button1 = widgets.Button(description='Python', layout=layout)
+button2 = widgets.Button(description='Go', layout=layout)
+button3 = widgets.Button(description='Rust', layout=layout)
+output= widgets.Output()
+
+print("Pick your favorite language:")
+display(button1, button2, button3, output)
+
+def event_handler(button):
+    with output:
+        clear_output()
+        print("Your favorite language is: {}".format(button.description))
+        
+button1.on_click(event_handler)
+button2.on_click(event_handler)
+button3.on_click(event_handler)
