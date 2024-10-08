@@ -1,0 +1,87 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from ipywidgets import interact, interact_manual
+
+# Generate x values from 0 to 6
+x = np.linspace(0, 6)
+
+# Define a function to plot a sine wave based on frequency w
+def sine_wave(w=1.0):
+    plt.plot(x, np.sin(w * x))  # Plot the sine wave
+    plt.show()  # Show the plot
+    
+# Create an interactive slider for the frequency of the sine wave
+interact_manual(sine_wave)
+
+---------------------------------------------------------------------
+
+@interact(w=1)  # Create an interactive widget for the frequency w with a default value of 1
+def sine_wave(w):
+    plt.plot(x, np.sin(w * x))  # Plot the sine wave
+    plt.show()  # Show the plot
+
+---------------------------------------------------------------------
+
+def languages(descriptor):
+    return descriptor  # Return the selected descriptor
+
+# Define options for the language descriptor dropdown
+options = {'The King': 'Python', 'Not bad': 'Julia', 'Up and coming': 'Go'}
+
+# Create an interactive dropdown menu to select a programming language descriptor
+interact(languages, descriptor=options)
+
+---------------------------------------------------------------------
+
+from ipywidgets import interactive
+from IPython.display import display
+
+# Define a function that returns the value of x
+def my_function(x):
+    return x
+
+# Create an interactive widget for x with an initial value of 5
+widget = interactive(my_function, x=5)
+display(widget)  # Display the interactive widget
+
+
+---------------------------------------------------------------------
+# "Manual" creation of a widget.
+import ipywidgets as widgets
+
+# Create an integer slider with specified parameters
+slider = widgets.IntSlider(value=0,
+                            min=0,
+                            max=20,
+                            step=2,
+                            description='Integer Slider',
+                            orientation='horizontal')
+
+display(slider)  # Display the slider
+display(slider.keys)  # Display the available keys for the slider (not typically used)
+
+
+---------------------------------------------------------------------
+
+import ipywidgets as widgets
+from IPython.display import clear_output
+
+# Create buttons for selecting programming languages
+button1 = widgets.Button(description='Python')
+button2 = widgets.Button(description='Go')
+button3 = widgets.Button(description='Rust')
+output = widgets.Output()  # Create an output widget to display results
+
+print("Pick your favorite language:")  # Prompt user to pick a language
+display(button1, button2, button3, output)  # Display the buttons and output area
+
+# Define the event handler for button clicks
+def event_handler(button):
+    with output:
+        clear_output()  # Clear previous output
+        print("Your favorite language is: {}".format(button.description))  # Display selected language
+        
+# Attach the event handler to each button
+button1.on_click(event_handler)
+button2.on_click(event_handler)
+button3.on_click(event_handler)
